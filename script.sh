@@ -20,6 +20,7 @@ done
 
 mkdir "$album_title"
 cd "$album_title"
+curl -L -o cover.jpg https://coverartarchive.org/release/{$album_id}/front
 # mkdir "Disc $(( $current_disc + 1 ))"
 # cd "Disc $(( $current_disc + 1 ))"
 for file in "$@"; do
