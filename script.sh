@@ -38,6 +38,6 @@ for file in "$@"; do
     file_name=$(echo "$track_name" | sed 's/\//:/g')
     (( track_number += prev_tracks ))
     ffmpeg -i "../$file" -c:a flac -metadata release_date="$first_release_date" -metadata artist="$artist_names" -metadata album="$album_title" -metadata track="$track_number" -metadata title="$track_name" "${file_name}.flac"
-    
+    metaflac --import-picture-from=cover.jpg "${file_name}.flac"
     
 done
